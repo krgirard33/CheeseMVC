@@ -16,8 +16,8 @@
 }
 
 <ul> 
-    @foreach (string cheese in ViewBag.cheeses)
+    @foreach (KeyValuePair<string, string> cheese in ViewBag.cheeses)
     {
-        <li>@cheese </li>
+        <li><input type='checkbox'name='remove' /> @cheese.Key - @cheese.Value </li>
     }
 </ul>
