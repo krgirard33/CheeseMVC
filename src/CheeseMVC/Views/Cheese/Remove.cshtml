@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+
+}
+
+<h1>My Cheeses</h1>
+
+<p><a asp-controller="Cheese" asp-action="Remove">Remove Cheese</a></p>
+
+@if (ViewBag.cheeses.Count == 0)
+{
+    <p>No cheeses yet!</p>
+}
+<h1>Add Cheese</h1>
+<form method="post" name="removecheese">
+    <ul>
+        @foreach (KeyValuePair<string, string> cheese in ViewBag.cheeses)
+        {
+            <li><input type='checkbox' name='remove' /> @cheese.Key - @cheese.Value </li>
+        }
+    </ul>
+</form>
